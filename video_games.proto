@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "utils.proto";
+
+package video_games;
+
+option go_package = "./video_games";
+
+enum Type {
+  GENERIC = 0;
+  SPORTS = 1;
+  ADVENTURE = 2;
+}
+
+message Game {
+  utils.Date date = 1;
+  optional uint32 duration_minutes = 2;
+}
+
+message VideoGame {
+  string title = 1;
+  repeated Type type = 2;
+  utils.Date library_add_date = 3;
+  repeated Game games = 4;
+}
+
+message Library {
+  repeated VideoGame list = 1;
+}
