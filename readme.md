@@ -2,5 +2,5 @@
 ## Usage
 
 ```shell
-protoc -I . --go_out=. video_games.proto
+protoc -I . --go_out ./go proto/*
 ```

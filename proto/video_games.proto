@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "utils.proto";
+import "proto/utils.proto";
 
 package video_games;
 
