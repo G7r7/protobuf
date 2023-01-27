@@ -4,7 +4,7 @@ import "proto/utils.proto";
 
 package video_games;
 
-option go_package = "./video_games";
+option go_package = "go/main/messages/video_games";
 
 enum Type {
   GENERIC = 0;
@@ -14,7 +14,7 @@ enum Type {
 
 message Game {
   utils.Date date = 1;
-  optional uint32 duration_minutes = 2;
+  uint32 duration_minutes = 2;
 }
 
 message VideoGame {

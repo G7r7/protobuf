@@ -16,6 +16,3 @@ RUN tar xf protoc-gen-go.tar.gz
 RUN mv protoc-gen-go /usr/local/bin
 RUN chmod a+x /usr/local/bin/protoc-gen-go
 RUN protoc-gen-go --version
-
-# GOBIN
-RUN go env -w GOBIN=/workspaces/protobuf

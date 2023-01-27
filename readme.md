@@ -2,7 +2,7 @@
 ## Compile protobuf
 
 ```shell
-protoc -I . --go_out ./go proto/*
+protoc -I=. --go_out=./go proto/*
 ```
 
 ## Run main package
