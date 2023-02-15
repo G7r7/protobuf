@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package utils;
 
-option go_package = "messages/utils";
+option go_package = "main/messages/utils";
 
 message Date {
     uint32 year = 1;

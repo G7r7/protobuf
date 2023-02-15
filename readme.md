@@ -2,11 +2,11 @@
 ## Compile protobuf
 
 ```shell
-protoc -I=. --go_out=./go proto/*
+protoc -I=. --go_out=. proto/*
 ```
 
 ## Run main package
 
 ```shell
-go run go/main/main.go
+$(cd go/main && go run main.go)
 ```

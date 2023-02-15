@@ -1,4 +1,4 @@
-module sequence3/main
+module main
 
 go 1.20
 

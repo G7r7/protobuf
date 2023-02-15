@@ -4,7 +4,7 @@ import "proto/utils.proto";
 
 package video_games;
 
-option go_package = "go/main/messages/video_games";
+option go_package = "main/messages/video_games";
 
 enum Type {
   GENERIC = 0;
@@ -22,6 +22,7 @@ message VideoGame {
   repeated Type type = 2;
   utils.Date library_add_date = 3;
   repeated Game games = 4;
+  bool favorite = 5;
 }
 
 message Library {

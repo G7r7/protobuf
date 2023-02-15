@@ -4,9 +4,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"sequence3/main/messages/utils"
-	"sequence3/main/messages/video_games"
-
+	"main/messages/utils"
+	"main/messages/video_games"
 	"google.golang.org/protobuf/proto"
 )
 
