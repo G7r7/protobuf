@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include "proto/video_games.pb.h"
+#include <google/protobuf/util/json_util.h>
 
 // Main function:  Reads the entire address book from a file and prints all
 //   the information inside.
@@ -27,6 +28,10 @@ int main(int argc, char* argv[]) {
   }
 
   std::cout << library.DebugString() << std::endl;
+
+  std::string json;
+  google::protobuf::util::MessageToJsonString(library, &json);
+  std::cout << json << std::endl;
 
   // Optional:  Delete all global objects allocated by libprotobuf.
   google::protobuf::ShutdownProtobufLibrary();
