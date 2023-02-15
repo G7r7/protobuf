@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
 	"main/messages/utils"
@@ -10,9 +9,6 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello World!")
-	c := uint32(3)
-	d := uint32(350)
 	library := video_games.Library{
 		List: []*video_games.VideoGame{
 			{
@@ -22,7 +18,7 @@ func main() {
 				Games: []*video_games.Game{
 					{
 						Date:            &utils.Date{Year: 2021, Month: 3, Day: 23},
-						DurationMinutes: &c,
+						DurationMinutes: 3,
 					},
 				},
 			},
@@ -33,7 +29,7 @@ func main() {
 				Games: []*video_games.Game{
 					{
 						Date:            &utils.Date{Year: 2019, Month: 11, Day: 20},
-						DurationMinutes: &d,
+						DurationMinutes: 350,
 					},
 					{
 						Date: &utils.Date{Year: 2021, Month: 6, Day: 14},
