@@ -5,6 +5,7 @@ import (
 	"log"
 	"main/messages/utils"
 	"main/messages/video_games"
+
 	"google.golang.org/protobuf/proto"
 )
 
@@ -21,6 +22,7 @@ func main() {
 						DurationMinutes: 3,
 					},
 				},
+				Favorite: true,
 			},
 			{
 				Title:          "Mario Kart 3",
@@ -35,25 +37,26 @@ func main() {
 						Date: &utils.Date{Year: 2021, Month: 6, Day: 14},
 					},
 				},
+				Favorite: false,
 			},
 		},
 	}
 
 	println(library.String())
 
-	// Write the massage to disk.
+	// Write the message to disk.
 	println("Writing message to file ...")
 	out, err := proto.Marshal(&library)
 	if err != nil {
 		log.Fatalln("Failed to encode message:", err)
 	}
-	if err := ioutil.WriteFile("message.txt", out, 0644); err != nil {
+	if err := ioutil.WriteFile("message2.txt", out, 0644); err != nil {
 		log.Fatalln("Failed to write message:", err)
 	}
 
 	// Read the existing address book.
 	println("Reading message from file ...")
-	in, err := ioutil.ReadFile("message.txt")
+	in, err := ioutil.ReadFile("message2.txt")
 	if err != nil {
 		log.Fatalln("Error reading file:", err)
 	}
@@ -63,4 +66,17 @@ func main() {
 	}
 
 	println(library2.String())
+
+	// Read the existing address book in V1.
+	println("Reading message from file ...")
+	in, err = ioutil.ReadFile("message.txt")
+	if err != nil {
+		log.Fatalln("Error reading file:", err)
+	}
+	library3 := video_games.Library{}
+	if err := proto.Unmarshal(in, &library3); err != nil {
+		log.Fatalln("Failed to parse library:", err)
+	}
+
+	println(library3.String())
 }

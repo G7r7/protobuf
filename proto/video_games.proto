@@ -22,7 +22,7 @@ message VideoGame {
   repeated Type type = 2;
   utils.Date library_add_date = 3;
   repeated Game games = 4;
-  // bool favorite = 5;
+  bool favorite = 5;
 }
 
 message Library {
