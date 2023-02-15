@@ -14,8 +14,14 @@
 		"ghcr.io/devcontainers/features/git:1": {},
 	},
 
-	"extensions": [
-		"zxh404.vscode-proto3",
-		"golang.go"
-	]
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"zxh404.vscode-proto3",
+				"golang.go",
+				"mhutchie.git-graph",
+				"eamodio.gitlens"
+			]
+		}
+	}
 }
