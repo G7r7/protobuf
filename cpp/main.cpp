@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
   video_games::Library library;
 
   {
-    // Read the existing address book.
+    // Read the existing file.
     std::fstream input(argv[1], std::ios::in | std::ios::binary);
     if (!library.ParseFromIstream(&input)) {
       std::cerr << "Failed to parse message v1." << std::endl;
@@ -26,7 +26,6 @@ int main(int argc, char* argv[]) {
     }
   }
 
-  std::cout << "V1:" << std::endl;
   std::cout << library.DebugString() << std::endl;
 
   // Optional:  Delete all global objects allocated by libprotobuf.
